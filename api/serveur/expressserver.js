@@ -12,8 +12,7 @@ app.use(function(req, res, next) {
 
     res.status(404).send("Something get wrong");
 
-
-});
+})
 
 app.use(function(err, req, res, next) {
     console.error(err.stack)
