@@ -3,17 +3,17 @@
 // the pin for appropriate port and the second pin within it.
 
 var five = require("johnny-five");
-var board = new five.Board();
+var board = new five.Board({ port: '/dev/ttyUSB0' });
 
 board.on("ready", function() {
-  var proximity = new five.Proximity({
-    freq: 1000,
-    controller: "HCSR04",
-    pin: 10
-  });
+    var proximity = new five.Proximity({
+        freq: 1000,
+        controller: "HCSR04",
+        pin: 10
+    });
 
-  proximity.on("data", function() {
-    console.log("inches: ", this.inches);
-    console.log("cm: ", this.cm);
-  });
+    proximity.on("data", function() {
+        console.log("inches: ", this.inches);
+        console.log("cm: ", this.cm);
+    });
 });

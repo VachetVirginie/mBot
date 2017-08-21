@@ -4,17 +4,16 @@
 // light sensor in the range 0 (total darkness) to 1023 (full bright light).
 
 var five = require("johnny-five");
-var board = new five.Board();
+var board = new five.Board({ port: '/dev/ttyUSB0' });
 
 board.on("ready", function() {
 
-  var sensor = new five.Sensor({
-    pin: "A6",
-    freq: 500 // change this to speed you want data reported at. Slower is better
-  });
+    var sensor = new five.Sensor({
+        pin: "A6",
+        freq: 200 // change this to speed you want data reported at. Slower is better
+    });
 
-  sensor.on("data", function() {
-    console.log(this.value);
-  });
+    sensor.on("data", function() {
+        console.log(this.value);
+    });
 });
-

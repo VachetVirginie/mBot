@@ -18,8 +18,8 @@ board.on("ready", function() {
         });
         strip.on("ready", function() {
             var colors = ["#FF9999"];
-            var current_colors = 0;
-            var current_pos = 0;
+            var current_colors = 1;
+            var current_pos = 1;
             strip.pixel(current_pos).color(colors[current_colors]);
 
         })

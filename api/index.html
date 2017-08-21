@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="up">up</button>
+    <button id="down">down</button>
+    <button id="left">left</button>
+    <button id="right">right</button>
+</body>
+<script>
+    let btnUp = document.querySelector('#up');
+    let btnDown = document.querySelector('#down');
+    let btnLeft = document.querySelector('#left');
+    let btnRight = document.querySelector('#right');
+    btnUp.addEventListener('click', function() {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status === 200) {
+                    console.log("ok");
+                }
+            }
+        }
+        xhr.open("POST", "process.js", true);
+        xhr.send();
+    });
+</script>
+
+</html>

@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "dependencies": {
+    "express": "^4.15.4",
     "johnny-five": "^0.9.59",
     "keypress": "^0.2.1",
     "node-pixel": "^0.6.0"
