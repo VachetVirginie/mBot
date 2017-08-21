@@ -5,7 +5,7 @@ var max_speed_l = 1024;
 var max_speed_r = 1024;
 var l_motor = r_motor = null;
 
-btn.stdin.on('click', function(chunk, key) {
+stdin.on('click', function(chunk, key) {
 
     switch (key.name) {
         case "up":
